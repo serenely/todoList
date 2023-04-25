@@ -1,0 +1,42 @@
+.content__div{
+    padding-top: 30px ;
+    display: flex;
+    flex-direction: column;
+}
+.content__div__li{
+    display: flex;
+    justify-content: space-between;
+}
+.content__li{
+    min-width: 220px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid beige;
+    border-radius: 10px;
+    padding-bottom: 15px ;
+    background-color: aliceblue;
+    list-style: none;
+    cursor: pointer;
+
+}
+
+.content__li__btn{
+    position: relative;
+    top: 9px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bin{
+    position: relative;
+    right: 3px;
+    width: 30px;
+    height: 30px;
+}
+
+.strike{
+    text-decoration: line-through;
+}
