@@ -12,7 +12,8 @@ const AddToList = (props) => {
     id: Math.random(),
     text: value,
     active: false
-  }
+    }
+    setValue('')
   props.addActivity(newActivity)
   }
   

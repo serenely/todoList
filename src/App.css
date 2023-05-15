@@ -13,7 +13,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   background-color: white;
   width: 300px;
   height: auto;

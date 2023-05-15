@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
 import BIN from '../../icos/icos';
 
 import './Content.css'
+import { activityActions, } from '../../store/store';
 
-const Content = ({activities, setActivities, removeItem}) => {
+const Content = (props) => {
 
+  const activities = useSelector(state => state)
+  const dispatch = useDispatch()
 
-  function handleClick(event) {
-    console.log(event.target.id);
-    activities[event.target.id].active = !activities[event.target.id].active 
-    setActivities([...activities])
-  }
+function handleClick(id) {
+  dispatch(activityActions.toggleActive(id));
+}
+
+const removeItemHandler = id => {
+  dispatch(activityActions.removeItem(id));
+}
   
   return (
     <div className='content__div'>
@@ -20,7 +24,9 @@ const Content = ({activities, setActivities, removeItem}) => {
         <li id = {index} className={`content__li ${activity.active ? 'strike' : ''}`} onClick={handleClick}>
           {activity.text}
         </li>
-          <button className='content__li__btn' onClick={()=> removeItem(activity.id)}><img className='bin' src={BIN} alt="bin" /></button>
+          <button className='content__li__btn' onClick={() => removeItemHandler(activity.id)}>
+            <img className='bin' src={BIN} alt="bin" />
+          </button>
         </div>
       ))}
     </div>

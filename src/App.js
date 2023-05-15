@@ -5,38 +5,31 @@ import AddToList from './components/AddToList/AddToList';
 import Content from './components/Content/Content';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import { useDispatch, useSelector } from 'react-redux';
 
-
-const HEADER_TEXT = 'Todo List'
-const ACTIVITIES = [
-  { id: 1, text: 'Make a video in which you need to open your mouth to music', active: false },
-  { id: 2, text: 'Take a bag and go to the gym', active: true },
-  { id: 3, text: 'Do some exercises at home', active: false },
-]
 
 function App() {
-  const [activities, setActivities] = useState(ACTIVITIES);
+  const dispatch = useDispatch()
+  const activityGetState = useSelector((state) => state.map(state => state.active))
+
 
   const addActivity = newActivity => {
-    setActivities([...activities, newActivity])
-  }
-  const removeItem = id => {
-    setActivities(activities.filter(activity => activity.id !== id))
+    dispatch(activityGetState.removeItem(newActivity))
   }
 
 
   return (
     <div className='background'>
       <div className="App">
-        <Header headerText={HEADER_TEXT} />
+        <Header />
         <ul className='app_ul'>
-          <AddToList addActivity={addActivity} activities={activities} />
-          <Content activities={activities} setActivities={setActivities} removeItem={removeItem} />
+          <AddToList addActivity={addActivity} />
+          <Content />
         </ul>
         <Footer />
       </div>
     </div>
-
+    // 
   );
 }
 

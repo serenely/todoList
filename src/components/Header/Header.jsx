@@ -1,9 +1,9 @@
 import './Header.css'
 
-const Header = (props) => {
+const Header = () => {
     return (
         <div className='header'>
-            {props.headerText}
+            Todo List
         </div>
     )
 }

@@ -16,3 +16,14 @@
     font-size: 14px;
     cursor: pointer;
 }
+.footer__btn.show{
+    border: 0px;
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+    background-color: rgb(129, 3, 247);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display:none
+}
