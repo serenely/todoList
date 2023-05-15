@@ -3,7 +3,6 @@ import './App.css';
 
 import AddToList from './components/AddToList/AddToList';
 import Content from './components/Content/Content';
-import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -26,7 +25,6 @@ function App() {
           <AddToList addActivity={addActivity} />
           <Content />
         </ul>
-        <Footer />
       </div>
     </div>
     // 
